@@ -5,5 +5,12 @@
       border-width: 2px;
     }
   }
+  @media screen and (max-width: 480px) {
+    body {
+      display:flex;
+      width:380px;
+      justify-content: center;
+    }
+  }
 
   
