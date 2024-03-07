@@ -1,4 +1,36 @@
-<div>
+<!-- <div>
     <p>Observable</p>
     <div *ngFor="let o of obs$ | async">{{ o.name }}</div>
-</div>
+
+</div> -->
+<!-- <div>
+    <p>Repair</p>
+    <div *ngFor="let r of repair$ | async">{{r.id}}</div>
+</div> -->
+<!-- <div *ngIf="myData$ | async; let myData">
+    <span>
+        <p>Repair</p>
+        {{ myData}}
+    </span>
+</div> -->
+<mat-card>
+
+    {{repair.id}}
+    <form [formGroup]="repairform" class="column">
+
+        <!-- <mat-form-field appearance="outline">
+            <input matInput placeholder="id" type="string" formControlName="id">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <input matInput placeholder="age" type="number">
+        </mat-form-field> -->
+        <mat-form-field appearance="outline">
+            <input matInput placeholder="description" type="string" formControlName="description">
+        </mat-form-field>
+
+        <mat-card-actions>
+            <button mat-raised-button  color='accent' [disabled]=!repairform.valid (click)="save(repairform)">Save</button>
+        </mat-card-actions>
+        {{repairform.status}}
+    </form>
+</mat-card>
