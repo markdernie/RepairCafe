@@ -4,11 +4,12 @@ import { RouterOutlet } from '@angular/router';
 import { MatToolbarModule} from '@angular/material/toolbar'
 import { RepairComponent } from './repair/repair/repair.component'
 import { HeaderComponent} from './common/header/header.component'
+import {GithubRepoListComponent} from './github-repo-list.component'
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, MatToolbarModule, HeaderComponent,RepairComponent],
+  imports: [CommonModule, RouterOutlet, MatToolbarModule, HeaderComponent,RepairComponent,],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

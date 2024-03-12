@@ -13,9 +13,40 @@
         {{ myData}}
     </span>
 </div> -->
-<mat-card>
+<!-- @if (query.isPending()) {
+    Loading...
+}
 
-    {{repair.id}}
+@if (query.error()) {
+    An error has occurred: {{ query.error()?.message }}
+}
+
+@if (query.data(); as data) {
+    <h1>Name: {{ data.name }}</h1>
+    <p>Description: {{ data.description }}</p>
+    <strong>👀 {{ data.subscribers_count }}</strong>
+    <strong>✨ {{ data.stargazers_count }}</strong>
+    <strong>🍴 {{ data.forks_count }}</strong>
+}    -->
+
+<!-- @if (repair.isPending()) {
+    Loading...
+} -->
+
+<!-- @if (repair.error()) {
+    An error has occurred: {{ query.error()?.message }}
+} -->
+
+<!-- @if (repair.data(); as data) {
+    <h1>Name: {{ data.id }}</h1>
+    <p>Description: {{ data.description }}</p>
+    <strong>👀 {{ data.age }}</strong>
+    <strong>✨ {{ data.description }}</strong> -->
+<!-- <strong>🍴 {{ data.forks_count }}</strong> -->
+<!-- }    -->
+
+<!-- <angular-query-devtools initialIsOpen /> -->
+<mat-card>
     <form [formGroup]="repairform" class="column">
 
         <!-- <mat-form-field appearance="outline">
@@ -29,7 +60,9 @@
         </mat-form-field>
 
         <mat-card-actions>
-            <button mat-raised-button  color='accent' [disabled]=!repairform.valid (click)="save(repairform)">Save</button>
+            <!-- <button mat-raised-button  color='accent' [disabled]=!repairform.valid >Save</button> -->
+            <button mat-raised-button color='accent' [disabled]=!repairform.valid (click)="put(repairform)">Put</button>
+            <button mat-raised-button color='accent' (click)="get()">Get</button>
         </mat-card-actions>
         {{repairform.status}}
     </form>
