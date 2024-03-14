@@ -14,6 +14,7 @@ import { injectQuery } from '@tanstack/angular-query-experimental';
 import { AngularQueryDevtools } from '@tanstack/angular-query-devtools-experimental';
 import { lastValueFrom } from 'rxjs';
 import { ReposService } from '../../repos.service';
+import { v4 as uuidv4 } from 'uuid';
 
 @Component({
   selector: 'app-repair',
@@ -55,9 +56,10 @@ export class RepairComponent {
   repair$ = of([{ id: '1' }])
   //myData$:Observable<any>= of(new Repair)
   myData$: Observable<any> = of({})
+  file:string=uuidv4()
   repairform = this.formsbuilder.group({
-    // id: ['',Validators.required],
-    // age: 0,
+     id: [this.file],
+     age: Date.now(),
     description: ['',Validators.required]
   })
   //.subscribe((result: any) => this.obs = result);
@@ -86,13 +88,15 @@ export class RepairComponent {
  // }
 
   put(repairform: any) {
-    console.log('Click put',repairform)
-    this.repairService.putRepair(repairform)
+    let value=repairform.value
+    console.log('Click put'+JSON.stringify(value))
+    
+    this.repairService.putRepair(repairform.value)
   }
 
   get() {
     console.log('get')
-    this.repairService.getRepair()
+    this.repairService.getRepair(this.file)
   }
 
   
