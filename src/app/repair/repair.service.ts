@@ -28,9 +28,9 @@ export class RepairService {
     //this.http.get(this.urlroot+'api/file=78be4e57-0c4a-4011-9f97-0d698648da34',{})
    // console.log('this.url', this.url)
    // console.log('xxxx.url', url)
-   this.http.get(url,{})
-    .subscribe((data)=>{console.log('subscribe data:',data)})
-    //  return this.http.get<Repair>(`http://KateLaptop:3000?file=file3`)
+   //this.http.get(url,{})
+    //.subscribe((data)=>{console.log('subscribe data:',data)})
+      return this.http.get<Repair>(url)
     //return this.http.get<Response>(`${this.endpoint}/repos/tanstack/query`);
   }
 
@@ -39,17 +39,20 @@ export class RepairService {
   putRepair(repair:Repair) {
     console.log('put repair service',repair)
     this.file=repair.id
-    console.log('file from id',repair.id)
-    console.log("file is should not be notsetcorrectly",this.file)
-    console.log("repair.ids",repair.id)
+    // console.log('file from id',repair.id)
+    // console.log("file is should not be notsetcorrectly",this.file)
+    // console.log("repair.ids",repair.id)
     //this.file=repair.id
-    console.log('this.file=',this.file)
-    console.log('put url with file added=',this.url+this.file)
+    // console.log('this.file=',this.file)
+    // console.log('put url with file added=',this.url+this.file)
     //console.log('put repair=',this.url,repair)
     
+    this.file=repair.id
      
-    this.http.put(this.url+this.file,repair)
-     .subscribe((data)=>{console.log('data:',data)})
+    this.http.put(this.url+repair.id,repair)
+      .subscribe((data)=>{console.log('data:',data)})
+
+      //dont remove the subscribe line off put unless you really   know what is happening, stops creating files
     
   }
 

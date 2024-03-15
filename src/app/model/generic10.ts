@@ -1,10 +1,7 @@
 import {v4 as uuidv4} from 'uuid'
-export class Repair {
+
+export class Generic10 {
     id:string=uuidv4();
-    age:number=Date.now();
-    description:string='';
-    creation_date:number=Date.now();
-    lastupdate_date:number=Date.now();
     s001:string='';
     s002:string='';
     s003:string='';

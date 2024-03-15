@@ -47,23 +47,26 @@
 
 <!-- <angular-query-devtools initialIsOpen /> -->
 <mat-card>
-    <form [formGroup]="repairform" class="column">
+    <form [formGroup]="repairgform" class="column">
 
-        <!-- <mat-form-field appearance="outline">
+        <mat-form-field appearance="outline">
+            <mat-label>id</mat-label>
             <input matInput placeholder="id" type="string" formControlName="id">
         </mat-form-field>
         <mat-form-field appearance="outline">
-            <input matInput placeholder="age" type="number">
-        </mat-form-field> -->
+            <mat-label>Created Date</mat-label>
+            <input matInput placeholder="age" type="number" formControlName="n001">
+        </mat-form-field>
         <mat-form-field appearance="outline">
-            <input matInput placeholder="description" type="string" formControlName="description">
+            <mat-label>Description</mat-label>
+            <input matInput placeholder="description" type="string" formControlName="s001">
         </mat-form-field>
 
         <mat-card-actions>
             <!-- <button mat-raised-button  color='accent' [disabled]=!repairform.valid >Save</button> -->
-            <button mat-raised-button color='accent' [disabled]=!repairform.valid (click)="put(repairform)">Put</button>
+            <button mat-raised-button color='accent' [disabled]=!repairgform.valid (click)="put(repairgform)">Put</button>
             <button mat-raised-button color='accent' (click)="get()">Get</button>
         </mat-card-actions>
-        {{repairform.status}}
+        {{repairgform.status}}
     </form>
 </mat-card>
