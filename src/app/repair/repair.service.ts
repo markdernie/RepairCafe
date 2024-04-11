@@ -12,9 +12,11 @@ export class RepairService {
  file:string='notsetcorrectly'
   //url:string ='http://localhost:4200/api/?file='+this.file
  //url:string ='http://localhost:4200/api/?file='+this.file
-  url:string ='http://localhost:4200/api/?file='
+  
+ url:string ='http://localhost:4200/api/?file='
   urlroot:string='http://localhost:4200/'
   //url2:string ='http://KateLaptop:3000/api/?file=2'
+  //url:string='http://localhost:3000/?file='
   
  
   constructor(private http: HttpClient) { }
